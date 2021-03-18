@@ -6,7 +6,7 @@ USE Northwind
 -- 1.1 --
 SELECT CustomerID, CompanyName,City 
 FROM Customers
-WHERE City = 'Paris' OR City = 'London'
+WHERE City IN('Paris', 'London')
 -- 1.2 --
 SELECT ProductName
 FROM Products
@@ -25,6 +25,7 @@ ORDER BY "Number of Products in Category" DESC -- Can also use ORDER BY 2 DESC, 
 -- 1.5 --
 SELECT TitleOfCourtesy + FirstName + ' ' + LastName AS "Names of Employees", City -- single quotes and using string concatenation with +
 FROM Employees
+WHERE Country = 'UK'
 -- 1.6 --
 SELECT t.RegionID, FORMAT(ROUND(SUM((1 - od.Discount)*od.Quantity*od.UnitPrice), 2), '##.##') AS "Total Sales" -- desired return values, RegionID and aggregated sum of prices in desired format
 FROM [Order Details] od  -- start to 'traverse' through tables
@@ -81,7 +82,6 @@ SELECT * FROM spartans_table
 -------------------
 USE Northwind
 -- 3.1 --
-SELECT * FROM Employees
 SELECT CONCAT(e.FirstName,' ',e.LastName) AS "Employee Name", CONCAT(emp.FirstName,' ',emp.LastName) AS "Reports To" -- Concatenates First and Last names as Employee Name and Reports to
 FROM Employees e -- From Employees table
 LEFT JOIN Employees emp ON e.ReportsTo = emp.EmployeeID -- Joining Employees to Employees as desired information is stored there
@@ -94,7 +94,7 @@ GROUP BY s.CompanyName -- GROUP BY the Company Name
 HAVING SUM((1 - od.Discount)*od.Quantity*od.UnitPrice) > 10000 -- Where the sales sum (does the calculation again) is greater than 10,000
 ORDER BY "Sales" DESC -- Not necesarry but returns sales in descending order
 -- 3.3 --
-SELECT TOP 10 c.CompanyName, SUM(od.Quantity*od.UnitPrice) AS "Value of Orders Shipped" FROM Customers c -- Selecting top 10, SUM of value (no discount as VALUE)
+SELECT TOP 10 c.CompanyName, SUM((1-od.Discount)*od.Quantity*od.UnitPrice) AS "Value of Orders Shipped" FROM Customers c -- Selecting top 10, SUM of value (no discount as VALUE)
 INNER JOIN Orders o ON c.CustomerID = o.CustomerID -- Customers --> Orders with CustomerID
 INNER JOIN [Order Details] od  ON o.OrderID = od.OrderID -- Orders --> Orders with CustomerID
 WHERE YEAR(o.OrderDate) = YEAR((SELECT TOP 1 OrderDate FROM Orders ORDER BY OrderDate DESC)) -- Where the year of entry ORDER date = 1998 (found by top select sub query of dates, ordered in desc)
