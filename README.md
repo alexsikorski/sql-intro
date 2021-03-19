@@ -2,7 +2,9 @@
 A mini-project SQL project completed during training at Sparta Global.
 
 ## About this Project
-An introduction to SQL basics and intermediate queries. Mainly focusing on DDL and DML commands, this project had been completed within a working week and had consisted of numeral topics. Data had been exported and visually represented in the [PDF](https://github.com/alexsikorski/sql-mini-project/blob/main/SQL_Report_AlexSikorski.pdf") file (you can also view the respective [Excel files](https://github.com/alexsikorski/sql-mini-project/blob/main/docs)). This repository contains a SQL file that was used in Microsoft Azure and the documentation. The Northwind database was used for this project. 
+An introduction to SQL basics and intermediate queries. Mainly focusing on DDL and DML commands, this project had been completed within a working week and had consisted of numeral topics. Data had been exported and visually represented in the [PDF](https://github.com/alexsikorski/sql-mini-project/blob/main/SQL_Report_AlexSikorski.pdf") file (you can also view the respective [Excel files](https://github.com/alexsikorski/sql-mini-project/blob/main/docs)). This repository contains a SQL file that was used in Microsoft Azure and the documentation. The Northwind database was used for this project.
+
+[View the SQL file](https://github.com/alexsikorski/sql-mini-project/blob/main/SQL_Practical_Exercise.sql) or [view the PDF file](https://github.com/alexsikorski/sql-mini-project/blob/main/SQL_Report_AlexSikorski.pdf).
 
 ## Topics
 - Basic Syntax
@@ -12,10 +14,6 @@ An introduction to SQL basics and intermediate queries. Mainly focusing on DDL a
 - Joins
 - Grouping
 - Aggregate Functions
-
-[View the SQL file](https://github.com/alexsikorski/sql-mini-project/blob/main/SQL_Practical_Exercise.sql)
-
-[View the PDF file](https://github.com/alexsikorski/sql-mini-project/blob/main/SQL_Report_AlexSikorski.pdf)
 
 ## Example Queries
 #### Concatenation and LEFT JOIN
